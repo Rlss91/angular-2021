@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-
+import { Observable } from 'rxjs';
 import { MyserviceService } from '../myservice.service';
 
 @Component({
@@ -17,5 +17,37 @@ export class Lesson2Component implements OnInit, OnChanges {
   }
   ngOnInit(): void {
     console.log('ngOnInit');
+    const locations = new Observable((observer: any) => {
+      let watchId: number;
+
+      if ('geolocation' in navigator) {
+        watchId = navigator.geolocation.watchPosition(
+          (position: any) => {
+            observer.next(position);
+          },
+          (error: any) => {
+            observer.error(error);
+          }
+        );
+      } else {
+        observer.error('Ge.. not available');
+      }
+      return {
+        unsubscribe() {
+          navigator.geolocation.clearWatch(watchId);
+        },
+      };
+    });
+    const locationsSubscription = locations.subscribe({
+      next(position) {
+        console.log('Current Position: ', position);
+      },
+      error(msg) {
+        console.log('Error : ', msg);
+      },
+    });
+    setTimeout(() => {
+      locationsSubscription.unsubscribe();
+    }, 10000);
   }
 }
