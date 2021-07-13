@@ -1,0 +1,19 @@
+.red {
+  background-color: red;
+  animation: anim 4s;
+}
+
+@keyframes anim {
+  0% {
+    background-color: red;
+    color: black;
+  }
+  50% {
+    background-color: blue;
+    color: white;
+  }
+  100% {
+    background-color: red;
+    color: black;
+  }
+}

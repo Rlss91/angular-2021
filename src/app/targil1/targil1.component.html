@@ -1,1 +1,7 @@
 <p>targil1 works!</p>
+<div>
+  <button (click)="f1()">click me</button>
+  <div *ngFor="let item of data">
+    <app-targil1row [row]="item"></app-targil1row>
+  </div>
+</div>
