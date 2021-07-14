@@ -1,5 +1,6 @@
 <p>lesson2 works!{{ myserviceService.getN() }}</p>
 <input type="checkbox" [(ngModel)]="selected" />
+<button (click)="stopSub()">stop</button>
 <app-lesson2child *ngIf="selected"></app-lesson2child>
 <app-lesson2child *ngIf="selected"></app-lesson2child>
 <app-lesson2child *ngIf="selected"></app-lesson2child>
