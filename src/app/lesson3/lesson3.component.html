@@ -1,1 +1,11 @@
 <p>lesson3 works!</p>
+<ul>
+  <li *ngFor="let item of dataArr">
+    {{ item.text }}|<button (click)="Upper(item)">Upper</button>|<button
+      (click)="Lower(item)"
+    >
+      Lower
+    </button>
+  </li>
+</ul>
+<br />

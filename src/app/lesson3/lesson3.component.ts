@@ -8,12 +8,14 @@ import { HttpService } from '../http.service';
   styleUrls: ['./lesson3.component.css'],
 })
 export class Lesson3Component implements OnInit {
+  dataArr: any;
   constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
     this.httpService.getApi().subscribe(
       (data) => {
         console.log(data);
+        this.dataArr = data;
       },
       (err) => {
         console.log('err', err);
@@ -27,5 +29,12 @@ export class Lesson3Component implements OnInit {
         console.log('err', err);
       }
     );
+  }
+  Upper(item: any): void {
+    // console.log(item);
+    item.text = item.text.toUpperCase();
+  }
+  Lower(item: any): void {
+    item.text = item.text.toLowerCase();
   }
 }
