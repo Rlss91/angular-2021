@@ -9,7 +9,8 @@ export class HttpService {
   constructor(private http: HttpClient) {}
 
   getApi() {
-    let headers = new HttpHeaders({ token: 'abc' });
+    // let headers = new HttpHeaders({ token: 'abc' });
+    let headers = new HttpHeaders();
     let params = new HttpParams();
     params = params.append('a', 'a1');
     params = params.append('b', 'a2');
