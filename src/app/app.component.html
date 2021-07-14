@@ -1,5 +1,5 @@
 <app-targil1 style="display: none"></app-targil1>
-<app-lesson2></app-lesson2>
+<app-lesson2 style="display: none"></app-lesson2>
 <div style="display: none">
   <input *ngIf="!dis" type="text" [value]="txt" [disabled]="dis" />
   <button (click)="f1()">click here</button><br />
@@ -21,7 +21,7 @@
   <hr />
   <app-comp1 (onAdd)="reciveDataFromComp1($event)" [arr]="arr"></app-comp1>
 </div>
-
+<app-lesson3></app-lesson3>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->

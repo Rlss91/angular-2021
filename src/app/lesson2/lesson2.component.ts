@@ -18,11 +18,11 @@ export class Lesson2Component implements OnInit, OnChanges {
   }
   ngOnInit(): void {
     console.log('ngOnInit');
-    this.obFromService = this.myserviceService
-      .getNInterval()
-      .subscribe((value: any) => {
-        console.log('value from obs ', value);
-      });
+    // this.obFromService = this.myserviceService
+    //   .getNInterval()
+    //   .subscribe((value: any) => {
+    //     console.log('value from obs ', value);
+    //   });
     // const locations = new Observable((observer: any) => {
     //   let watchId: number;
 
