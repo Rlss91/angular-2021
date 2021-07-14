@@ -19,5 +19,13 @@ export class Lesson3Component implements OnInit {
         console.log('err', err);
       }
     );
+    this.httpService.postApi().subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (err) => {
+        console.log('err', err);
+      }
+    );
   }
 }
