@@ -14,6 +14,9 @@ import { AuthInterceptorService } from './auth-interceptor.service';
 import { ApiInterceptorService } from './api-interceptor.service';
 import { Lesson4Component } from './lesson4/lesson4.component';
 import { CusdirDirective } from './cusdir.directive';
+import { UpperriversPipe } from './upperrivers.pipe';
+import { SlicepipePipe } from './slicepipe.pipe';
+import { ReplacepipePipe } from './replacepipe.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { CusdirDirective } from './cusdir.directive';
     Lesson3Component,
     Lesson4Component,
     CusdirDirective,
+    UpperriversPipe,
+    SlicepipePipe,
+    ReplacepipePipe,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [
