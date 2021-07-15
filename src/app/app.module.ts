@@ -11,6 +11,9 @@ import { Lesson2Component } from './lesson2/lesson2.component';
 import { Lesson2childComponent } from './lesson2child/lesson2child.component';
 import { Lesson3Component } from './lesson3/lesson3.component';
 import { AuthInterceptorService } from './auth-interceptor.service';
+import { ApiInterceptorService } from './api-interceptor.service';
+import { Lesson4Component } from './lesson4/lesson4.component';
+import { CusdirDirective } from './cusdir.directive';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,19 @@ import { AuthInterceptorService } from './auth-interceptor.service';
     Lesson2Component,
     Lesson2childComponent,
     Lesson3Component,
+    Lesson4Component,
+    CusdirDirective,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptorService,
       multi: true,
     },
   ],

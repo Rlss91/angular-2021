@@ -15,7 +15,7 @@ export class HttpService {
     params = params.append('a', 'a1');
     params = params.append('b', 'a2');
     return this.http
-      .get('http://localhost:3000/api/', {
+      .get('/', {
         headers,
         params,
       })
@@ -32,8 +32,12 @@ export class HttpService {
       );
   }
   postApi() {
-    return this.http.post('http://localhost:3000/api/', {
+    return this.http.post('/', {
       text: 'asd',
     });
+  }
+
+  getToken() {
+    return this.http.post('/auth', {});
   }
 }
